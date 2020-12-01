@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { View, Text, TextInput, Button, ActivityIndicator } from 'react-native'
+import { View, Text, TextInput, Button, ActivityIndicator, StyleSheet } from 'react-native'
 
 import { useDispatch, useSelector } from 'react-redux'
 import { addToList } from '../actions/actions'
@@ -19,14 +19,14 @@ const SecondScreen = ({navigation}) => {
     }
 
     return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <View style={SSstyles.mainContainer}>
            <TextInput 
-                style={{ height: 40, width: 100, borderColor: 'gray', borderWidth: 1 }}
+                style={SSstyles.textInput}
                 placeholder="Nombre"
                 onChangeText={(text) => setName(text)}
                 value={name} />
             <TextInput 
-                style={{ height: 40, width: 100, borderColor: 'gray', borderWidth: 1 }}
+                style={SSstyles.textInput}
                 placeholder="Edad"
                 onChangeText={(number) => setAge(number)}
                 value={age} />
@@ -35,5 +35,23 @@ const SecondScreen = ({navigation}) => {
         </View>
     )
 }
+
+const SSstyles = StyleSheet.create({
+    mainContainer: {
+        flex: 1, 
+        justifyContent: 'center', 
+        alignItems: 'center'
+    },
+    textInput: {
+        height: 40, 
+        width: 300, 
+        borderColor: 'gray', 
+        borderWidth: 1,
+        borderRadius: 5,
+        margin: 10,
+        fontFamily: "Verdana",
+        fontSize: 20
+    }
+})
 
 export default SecondScreen

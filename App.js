@@ -7,9 +7,9 @@ import store from './store'
 
 import HomeScreen from './src/screens/HomeScreen'
 import SecondScreen from './src/screens/SecondScreen'
-import { Button } from 'react-native'
 
 const Stack = createStackNavigator()
+
 
 const App = () => {
   return (
